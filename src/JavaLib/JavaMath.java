@@ -79,15 +79,46 @@ public class JavaMath {
 		
 	}
 	
+	public static String showIntBinary (int a) {
+		String r = Integer.toBinaryString(a);
+		System.out.println(a + "的二进制表达是" + r);
+		return r;
+	}
+	
+	// int 最大计算 16 的阶乘
+	public static int intFactorial (int a) {
+		int r = a;
+		while (a > 1) {
+			r *= --a;
+		}
+		return r;
+	}
+	
+	public static void narcissisticNumber () {
+		for (int i = 100; i <1000; i++) {
+			int j = i;
+			int k = 0;
+			while (j > 0) {
+				int m = j % 10;
+				k += m * m * m;
+				j /= 10;
+			}
+			if (i == k)
+				System.out.println(i + "是水仙花数");
+		}
+	}
+	
 	public static void main (String[] args) {
-		int[] a = {1, 2, 3, 4, 5, 6};
-		System.out.println(intListMax(a));
-		System.out.println(intListAvarage(a));
-		intListPrint(intListCopy(a));
-		int[] b = new int [6];
-		intListCopy(a, b);
-		intListPrint(b);
-		intListReverse(a);
-		intListPrint(a);
+//		int[] a = {1, 2, 3, 4, 5, 6};
+//		System.out.println(intListMax(a));
+//		System.out.println(intListAvarage(a));
+//		intListPrint(intListCopy(a));
+//		int[] b = new int [6];
+//		intListCopy(a, b);
+//		intListPrint(b);
+//		intListReverse(a);
+//		intListPrint(a);
+//		System.out.println(intFactorial(16));
+		narcissisticNumber();
 	}
 }
